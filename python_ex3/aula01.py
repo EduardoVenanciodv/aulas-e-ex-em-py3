@@ -1,5 +1,5 @@
 frutas = ('Banana', 'Maça', 'Morango', 'Kiwi', 'Melão')
-print(frutas[1:4])
+print(frutas[0:3])
 
 for comer in frutas:
     print(f'Eu vou comer {comer}')
