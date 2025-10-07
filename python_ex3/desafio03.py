@@ -1,24 +1,15 @@
 from random import randint
-n = n1 = n2 = n3 = n4 = maiorvl = menorvl = 0
-
-for c in range(0, 5):
-    aleatorio = randint(1, 10)
-    if c == 0:
-        n = aleatorio
-        menorvl = aleatorio
-    if c == 1:
-        n1 = aleatorio
-    if c == 2:
-        n2 = aleatorio
-    if c == 3:
-        n3 = aleatorio
-    if c == 4:
-        n4 = aleatorio
-    if maiorvl < aleatorio:
-        maiorvl = aleatorio
-    if menorvl > aleatorio:
-        menorvl = aleatorio
-numbers = (n, n1, n2, n3, n4)
-print(f'Os valores sorteados foram : {numbers}')
-print(f'O maiora valor sorteado foi : {maiorvl}')
+maiorvl = menorvl = i = 0
+aleatorio = (randint(1, 10), randint(1, 10), randint(1, 10), randint(1, 10), randint(1, 10))
+print(f'Os valores sorteados foram : ', end='')
+for c in aleatorio:
+    print(f'{c}',  end=' ')
+    if i == 0:
+        menorvl = c
+    if maiorvl < c:
+        maiorvl = c
+    if menorvl > c:
+        menorvl = c
+    i = 1
+print(f'\nO maiora valor sorteado foi : {maiorvl}')
 print(f'O menor valor sorteado foi : {menorvl}')
