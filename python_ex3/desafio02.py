@@ -17,12 +17,19 @@ a = serieB.index('Chapecoense') + 1
 print(f'Infelizmente a Chapecoense está atualmente na serie B, na {a}^ colocação.')
 print('-='*15)
 
-iniciar = str(input('O time que você quer saber a colocação está na serie A ou B?')).upper().strip()[0]
-if iniciar == 'A':
-    name = str(input('Digite o nome do time:'))
-    classific = serieA.index(name)+1
-    print(f'O {name} está na {classific}^ colocação da serie A.')
-elif iniciar == 'B':
-    name = str(input('Digite o nome do time:'))
-    classific = serieB.index(name)+1
-    print(f'O {name} está na {classific}^ colocação da serie B.')
+saida = 'S'
+while saida == 'S':
+    iniciar = str(input('O time que você quer saber a colocação está na serie A ou B?')).upper().strip()[0]
+    if iniciar == 'A':
+        name = str(input('Digite o nome do time:'))
+        classific = serieA.index(name)+1
+        print(f'O {name} está na {classific}^ colocação da serie A.')
+        saida = str(input('Você quer ver outro time (S/N)?')).upper().strip()[0]
+    elif iniciar == 'B':
+        name = str(input('Digite o nome do time:'))
+        classific = serieB.index(name)+1
+        print(f'O {name} está na {classific}^ colocação da serie B.')
+        saida = str(input('Você quer ver outro time (S/N)?')).upper().strip()[0]
+    else:
+        print('Erro')
+        print('Tente novamente.', end=' ')
