@@ -5,10 +5,9 @@ produtos = ('Tang', 1,
             'Pão', 7.70,
             'Tapioca', 5.70,
             'Farofa', 5)
-texto = 'Listagem De Preços'
 cont = 0
 print('_'*60)
-print(f'{texto:^60}')
+print(f'{"Listagem De Preços":^60}')
 print('_'*60)
 for c in produtos:
     cont += 1
