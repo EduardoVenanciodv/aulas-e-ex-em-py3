@@ -6,13 +6,12 @@ print('-_-'*12)
 for c in palavras:
     vogais = ' '
     cont = tamanho = 0
+    print(f'\nNa palavra {c} Temos ', end='')
     while True:
         tamanho = len(c)
         separador = c[cont]
-        '''print(b)'''
-        if separador == 'A' or separador == 'E' or separador == 'I' or separador == 'O' or separador == 'U':
-            vogais += separador
+        if separador.upper() in 'AEIOU':
+            print(separador, end=' ')
         cont += 1
         if cont == tamanho:
             break
-    print(f'Na palavra {c} Temos {vogais}')
