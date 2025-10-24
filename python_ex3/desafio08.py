@@ -1,7 +1,6 @@
 lista = []
 continuar = 'S'
 while continuar != 'N':
-    valor = 0
     valor = int(input('Digite um número:'))
     if valor in lista:
         print('Valor duplicado. Não foi adicionado!')

@@ -1,12 +1,15 @@
 lista = []
-lista.append(str(input('Digite um expressão: ')))
-cont_open = cont_closing = 0
-for c in lista[0][:]:
+expr = (str(input('Digite um expressão: ')))
+for c in expr:
     if c == '(':
-        cont_open += 1
+        lista.append('(')
     elif c == ')':
-        cont_closing += 1
-if cont_closing == cont_open:
+        if len(lista) > 0:
+            lista.pop()
+        else:
+            lista.append(')')
+            break
+if len(lista) == 0:
     print('Sua expressão está válida.')
 else:
     print('Sua expressão está errada.')
