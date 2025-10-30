@@ -5,7 +5,7 @@ nomep = list()
 contp = cont = maisp = maisl = 0
 while True:
     dados.append(str(input('Digite seu nome:')))
-    dados.append(int(input('Digite seu peso:KG ')))
+    dados.append(float(input('Digite seu peso:KG ')))
     pessoas.append(dados[:])
     dados.clear()
     contp += 1
