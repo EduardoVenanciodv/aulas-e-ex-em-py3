@@ -1,18 +1,12 @@
-num = []
-par = []
-impar = []
-cont = 0
-for c in range(0, 7):
-    cont += 1
-    valor = (int(input(f'Digite o {cont}^ número:')))
+num = [[], []]
+for c in range(1, 8):
+    valor = (int(input(f'Digite o {c}^ número:')))
     if valor % 2 == 0:
-        par.append(valor)
+        num[0].append(valor)
     elif valor % 2 == 1:
-        impar.append(valor)
-num.append(par[:])
-num.append(impar[:])
-par.sort(reverse=False)
-impar.sort(reverse=False)
-print(f'Os valores pares digitados foram: {par}')
-print(f'Os valores ímpares digitados foram: {impar}')
+        num[1].append(valor)
+num[0].sort()
+num[1].sort()
+print(f'Os valores pares digitados foram: {num[0]}')
+print(f'Os valores ímpares digitados foram: {num[1]}')
 print(num)
