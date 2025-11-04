@@ -1,21 +1,25 @@
-matriz = []
-part = []
-part1 = []
-part2 = []
-cont = cont1 = cont2 = 0
+matriz = [[], [], []]
+cont = 0
 for c in range(0, 12):
     if c <= 2:
-        part.append(int(input(f'Digite um valor para [0, {cont}]')))
+        matriz[0].append(int(input(f'Digite um valor para [0, {cont}]:')))
         cont += 1
     elif c <= 5:
-        part1.append(int(input(f'Digite um valor para [1, {cont1}]')))
-        cont1 += 1
+        if c == 3:
+            cont = 0
+        matriz[1].append(int(input(f'Digite um valor para [1, {cont}]:')))
+        cont += 1
     elif c <= 8:
-        part2.append(int(input(f'Digite um valor para [2, {cont2}]')))
-        cont2 += 1
-    if c == 8:
-        matriz.append(part[:])
-        matriz.append(part1[:])
-        matriz.append(part2[:])
-        for i in range(0, 3):
-            print(f'{matriz[i]}')
+        if c == 6:
+            cont = 0
+        matriz[2].append(int(input(f'Digite um valor para [2, {cont}]:')))
+        cont += 1
+print('_-_'*10)
+for i in matriz[0]:
+    print(f'[{i:^5}]', end=' ')
+print()
+for i in matriz[1]:
+    print(f'[{i:^5}]', end=' ')
+print()
+for i in matriz[2]:
+    print(f'[{i:^5}]', end=' ')
