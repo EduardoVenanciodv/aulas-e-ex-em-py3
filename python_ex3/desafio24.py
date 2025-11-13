@@ -1,40 +1,42 @@
 grupo = []
 jogadores = {}
 gol = []
-cont = 0
 while True:
     print('__'*30)
+    jogadores.clear()
     jogadores['nome'] = str(input('Nome do jogador: '))
     jogos = int(input(f'Quantos jogos o {jogadores["nome"]} jogou?'))
-    totgol = 0
-    for c in range(0, jogos):
-        gols = int(input(f'Quantos gols na partida {c}?'))
-        gol.append(gols)
-        totgol += gols
-    jogadores['gols'] = gol[:]
-    jogadores['soma_gols'] = totgol
-    grupo.append(jogadores.copy())
     gol.clear()
-    cont += 1
-    print(grupo)
-    continuar = str(input('Quer continuar (S/N)?')).upper().strip()[0]
+    for c in range(0, jogos):
+        gol.append(int(input(f'Quantos gols na partida {c + 1}?')))
+    jogadores['gols'] = gol[:]
+    jogadores['soma_gols'] = sum(gol)
+    grupo.append(jogadores.copy())
+    while True:
+        continuar = str(input('Quer continuar (S/N)?')).upper().strip()[0]
+        if continuar in 'SN':
+            break
+        print('Erro! Responda apenas S ou N.')
     if continuar == 'N':
-        print('-=' * 30)
         break
-print(f'{"COND":<4} {"NOME":<8} {"GOLS":>8} {"TOTAL":>16}')
+print('-=' * 30)
+print(f'{"COND":<4} {"NOME":<8} {"GOLS":>10} {"TOTAL":>15}')
 print('__'*20)
 for c, b in enumerate(grupo):
-    print(f'{c:<4} {b["nome"]:<12} {b["gols"]} {b["soma_gols"]:>8}')
-
+    print(f'{c:>4} ', end='')
+    for v in b.values():
+        print(f'{str(v):<15}', end='')
+    print()
+print('=-'*20)
 while True:
-    print('=-'*20)
     dados = int(input('Mostra dados de qual jogador?'))
     if dados == 999:
         break
-    elif dados > cont - 1:
+    elif dados >= len(grupo):
         print(f'Erro! Não existe jogador com o código {dados}! Tente novamente.')
-    elif dados <= cont - 1:
+    else:
         print(f'-- Levantamento do jogador {grupo[dados]["nome"]}')
         for n, v in enumerate(grupo[dados]["gols"]):
-            print(f'{"No":>5} jogo {n} fez {v} gols')
+            print(f'{"No":>5} jogo {n + 1} fez {v} gols')
+    print('=-'*20)
 print(f'{"<---Volte Sempre--->":^35}')
