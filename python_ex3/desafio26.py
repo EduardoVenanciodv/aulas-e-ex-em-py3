@@ -1,9 +1,10 @@
 def escreva(tx):
-    print('-'*len(tx))
-    print(f'{tx}')
-    print('-'*len(tx))
+    tam = len(tx) + 6
+    print('-'*tam)
+    print(f'   {tx}')
+    print('-'*tam)
 
 
-escreva('  Logan  ')
-escreva('  Purple  ')
-escreva('  I FROM BRAZIL!  ')
+escreva('Logan')
+escreva('Purple')
+escreva('I FROM BRAZIL!')
