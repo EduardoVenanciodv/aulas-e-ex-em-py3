@@ -2,6 +2,8 @@ from operator import neg
 from time import sleep
 def contador(a, b, c):
     print('-='*20)
+    if c == 0:
+        c = 1
     if a < b:
         print(f'Contatem de {a} ate {b} de {c} em {c}.')
         for x in range(a, b+1, c):
@@ -9,8 +11,6 @@ def contador(a, b, c):
             sleep(0.3)
         print('FIM!')
     elif a > b:
-        if c == 0:
-            c += 1
         print(f'Contatem de {a} ate {b} de {c} em {c}.')
         if neg(c):
             for x in range(a, b-1, c):
