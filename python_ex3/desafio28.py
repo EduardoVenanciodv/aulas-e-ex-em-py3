@@ -6,8 +6,9 @@ def maior(*valor):
     for c, n in enumerate(valor):
         if c == 0:
             num = n
-        if num <= n:
-            num = n
+        else:
+            if num <= n:
+                num = n
         print(n, end=' ')
         sleep(0.4)
     print(f'Foram informados {len(valor)} valores ao todo.')
