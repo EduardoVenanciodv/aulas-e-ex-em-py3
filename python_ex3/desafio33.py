@@ -19,4 +19,7 @@ def leiaint(n1):
 print('__'*15)
 n = leiaint('Digite um número:')
 print(f'Você acabou de digitar o número {n}.')
+<<<<<<< HEAD
 print()
+=======
+>>>>>>> origin/main
