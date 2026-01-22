@@ -1,19 +1,25 @@
 
-def leiaint(n1):
+def leiaint(msg):
     """
-
     :param n1: le um numero inteiro
-    :return: Retonar o valor do n1 para n
+    :param valor: Recebe o valor de n1 quando o n1 for numeric
+    :param ok: O 'ok' por padrão é 'False'.
+               Enquanto o 'ok' não se torna 'True',
+               o repetidor while não irar pausar
+    :return: Retonar o valor do da variavel 'valor' para n
     """
-    n1 = input('Digite um número:')
-    if n1.isdigit():
-        n1 = int(n1)
+    ok = False
+    valor = 0
     while True:
-        if isinstance(n1, int):
-            return n1
+        n1 = str(input(msg))
+        if n1.isnumeric():
+            valor = int(n1)
+            ok = True
         else:
             print('\033[031mErro!! Digite um número inteiro valido\033[m')
-            n1 = leiaint('Digite um número:')
+        if ok:
+            break
+    return valor
 
 
 print('__'*15)
