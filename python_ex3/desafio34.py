@@ -27,4 +27,4 @@ def notas(* n, sit=False):
 
 resp = notas(4, 2, 8, 6, sit=True)
 print(resp)
-help(resp)
+#help(notas)
