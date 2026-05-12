@@ -1,6 +1,7 @@
 from ex36pac.utilidadescev import moeda
+from ex36pac.utilidadescev import dado
 
-p = float(input('Digite um valor: $'))
+p = dado.leiadinheiro('Digite um valor:$')
 
 print(f'A metade do valor {moeda.moeda(p)} é {moeda.metade(p, True)}')
 print(f'O dobro do valor {moeda.moeda(p)} é {moeda.dobro(p, True)}')
