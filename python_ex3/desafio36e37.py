@@ -1,5 +1,4 @@
-from ex36pac.utilidadescev import moeda
-from ex36pac.utilidadescev import dado
+from ex36ao41.utilidadescev import moeda, dado
 
 p = dado.leiadinheiro('Digite um valor:$')
 
