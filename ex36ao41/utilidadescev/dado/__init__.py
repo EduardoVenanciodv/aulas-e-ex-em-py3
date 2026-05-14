@@ -1,14 +1,14 @@
 
-def leiadinheiro(p):
-    print(p, end='')
-    p = input().replace(",", ".")
+def leia_dinheiro(msg):
     while True:
         try:
-            float(p)
-            p = float(p)
+            p = float(input(msg).replace(",", "."))
             break
-        except ValueError:
-            print(f'\033[031mErro o valor "{p}" é invalido!!\033[m:')
-            p = input('Digite um valor:$').replace(",", ".")
+        except (ValueError, TypeError):
+            print('\033[031mErro: Tivemos um problema no valor inserido!!\033[m')
+        except KeyboardInterrupt:
+            print('\n\033[031mErro: Usuário desistiu de informar os dados!!\033[m')
+            p = 'zero'
+            break
     return p
 
