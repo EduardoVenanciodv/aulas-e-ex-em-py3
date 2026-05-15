@@ -24,15 +24,21 @@ def cor(txt, tonalidade):
         return f'\033[33m{txt}\033[m'
     elif tonalidade == 'vermelho':
         return f'\033[31m{txt}\033[m'
+    elif tonalidade == 'roxo':
+        return f'\033[35m{txt}\033[m'
 
 
 def leiainteiro(msg):
-    resposta = int(input(cor(msg, 'amarelo')))
     try:
-        if resposta == 1 or resposta == 2 or resposta == 3:
+        resposta = int(input(cor(msg, 'amarelo')))
+        if 1 <= resposta <= 3:
             return resposta
+        else:
+            print(f'{cor("Erro: Digite uma opção valida!", "vermelho")}')
     except (TypeError, ValueError):
-        print(f'{cor("Erro", 'vermelho')}')
+        print(f'{cor("Erro: Digite um número inteiro valido!", 'vermelho')}')
+    except KeyboardInterrupt:
+        print(f'{cor("\nErro: O usuário decidiu não digitar nenhuma opção!", 'vermelho')}')
 
 
 
