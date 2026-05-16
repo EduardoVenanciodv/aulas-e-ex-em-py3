@@ -14,7 +14,7 @@ def linha(linhas=42):
 
 
 def cabeçalho(dado):
-    print(f'{linha()}\n{dado:^42}\n{linha()}')
+    print(f'{linha()}\n{cor(dado, 'verde'):^50}\n{linha()}')
 
 
 def cor(txt, tonalidade):
@@ -26,6 +26,8 @@ def cor(txt, tonalidade):
         return f'\033[31m{txt}\033[m'
     elif tonalidade == 'roxo':
         return f'\033[35m{txt}\033[m'
+    elif tonalidade == 'verde':
+        return f'\033[32m{txt}\033[m'
 
 
 def leiainteiro(msg):
@@ -39,6 +41,4 @@ def leiainteiro(msg):
         print(f'{cor("Erro: Digite um número inteiro valido!", 'vermelho')}')
     except KeyboardInterrupt:
         print(f'{cor("\nErro: O usuário decidiu não digitar nenhuma opção!", 'vermelho')}')
-
-
 

@@ -1,18 +1,28 @@
-from projctsystem44 import system
+from projctsystem44.system import *
+from projctsystem44.arquivo import *
 from time import sleep
 
+arq = 'dados.txt'
+
+if not arquivo_existe(arq):
+    criar_arquivo(arq)
+
 while True:
-    resposta = system.menu(['Ver pessoas cadastradas',
-                            'Cadastra nova pessoa',
-                            'Sair do sistema'])
+    resposta = menu(['Ver pessoas cadastradas',
+                     'Cadastra nova pessoa',
+                     'Sair do sistema'])
     if resposta == 1:
-        system.cabeçalho('Opção 2')
-        sleep(0.6)
+        cabeçalho('Opção 1')
+        ler_arquivo(arq)
+        sleep(0.8)
     elif resposta == 2:
-        system.cabeçalho('Opção 2')
+        cabeçalho('Opção 2')
+        nome = input(cor('Digite o nome:', 'amarelo'))
+        idade = input(cor('Digite a idade:', 'amarelo'))
+        adicionar_dados(arq, nome, idade)
         sleep(0.6)
     elif resposta == 3:
-        system.cabeçalho('Saindo do sistema... Até logo!')
+        cabeçalho('Saindo do sistema... Até logo!')
         sleep(0.6)
         break
 
