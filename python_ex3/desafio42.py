@@ -4,28 +4,25 @@ def leiaint(msg):
         try:
             valor = int(input(msg))
         except (ValueError, TypeError):
-            print('\033[31mErro: Tivemos um problema no valor inserido. Digite um valor Inteiro!\033[m')
+            print('\033[31mErro: Tivemos um problema no valor inserido. Digite um valor Inteiro válido!\033[m')
         except KeyboardInterrupt:
             print('\033[31m\nErro: O usuário preferiu não digitar nenhum número.\033[m')
-            valor = 0
-            break
+            return 0
         else:
-            break
-    return valor
+            return valor
 
 
 def leiareal(msg):
     while True:
         try:
             valor = float(input(msg).replace(",", "."))
-            break
         except (ValueError, TypeError):
-            print('\033[31mErro: Problema no Ddado inserido.\033[m')
+            print('\033[31mErro: Problema no dado inserido. Digite um valor Real válido!\033[m')
         except KeyboardInterrupt:
             print('\033[31m\nErro: Usuário não quis inserir os dados.\033[m')
-            valor = 0
-            break
-    return valor
+            return 0
+        else:
+            return valor
 
 
 inteiro = leiaint('Digite um valor inteiro: ')
