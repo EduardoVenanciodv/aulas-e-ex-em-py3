@@ -12,13 +12,13 @@ while True:
                      'Cadastra nova pessoa',
                      'Sair do sistema'])
     if resposta == 1:
-        cabeçalho('Opção 1')
+        cabeçalho('Pessoas Cadastradas')
         ler_arquivo(arq)
         sleep(0.8)
     elif resposta == 2:
-        cabeçalho('Opção 2')
+        cabeçalho('Novo Cadastro')
         nome = input(cor('Digite o nome:', 'amarelo'))
-        idade = input(cor('Digite a idade:', 'amarelo'))
+        idade = leiainteiro(cor('Digite a idade:', 'amarelo'))
         adicionar_dados(arq, nome, idade)
         sleep(0.6)
     elif resposta == 3:

@@ -5,8 +5,12 @@ def menu(lista):
         print(cor(c, 'amarelo'), '-', cor(item, 'azul'))
         c += 1
     print(linha())
-    opc = leiainteiro('Sua opção: ')
-    return opc
+    while True:
+        opc = leiainteiro('Sua opção: ')
+        if 1 <= opc <= 3:
+            return opc
+        else:
+            print(f'{cor("Erro: Digite uma opção valida!", "vermelho")}')
 
 
 def linha(linhas=42):
@@ -31,14 +35,12 @@ def cor(txt, tonalidade):
 
 
 def leiainteiro(msg):
-    try:
-        resposta = int(input(cor(msg, 'amarelo')))
-        if 1 <= resposta <= 3:
-            return resposta
+    while True:
+        try:
+            resposta = int(input(cor(msg, 'amarelo')))
+        except (TypeError, ValueError):
+            print(f'{cor("Erro: Digite um número inteiro valido!", 'vermelho')}')
+        except KeyboardInterrupt:
+            print(f'{cor("\nErro: O usuário decidiu não digitar nenhuma opção!", 'vermelho')}')
         else:
-            print(f'{cor("Erro: Digite uma opção valida!", "vermelho")}')
-    except (TypeError, ValueError):
-        print(f'{cor("Erro: Digite um número inteiro valido!", 'vermelho')}')
-    except KeyboardInterrupt:
-        print(f'{cor("\nErro: O usuário decidiu não digitar nenhuma opção!", 'vermelho')}')
-
+            return resposta
